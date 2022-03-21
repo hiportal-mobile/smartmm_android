@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spin_division">
+        <item>도공번호</item>
+        <item>장비명</item>
+    </string-array>
+    <string-array name="spin_jeoungbi">
+        <item>정비구분</item>
+    </string-array>
+    <string-array name="spin_suli">
+        <item>수리항목</item>
+    </string-array>
+    <string-array name="spin_detail">
+        <item>세부항목</item>
+    </string-array>
+</resources>

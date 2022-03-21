@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+   xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:gravity="center" >
+	<LinearLayout 
+	    android:background="#ffffff"  
+        android:layout_width="fill_parent" 
+        android:layout_height="105dp" 
+        android:weightSum="100" 
+    	android:padding="5dp"
+        android:orientation="horizontal" 
+        android:gravity="center" >
+        
+	    <LinearLayout 
+	        android:id="@+id/layout_checkbox"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:layout_weight="13"
+	        android:weightSum="100"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp"
+	        android:gravity="center"
+	        android:orientation="vertical" >
+	        <CheckBox
+	            android:id="@+id/item_select"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0dp"
+		        android:layout_weight="90"
+		        android:gravity="center" >
+	        </CheckBox>
+	        </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:id="@+id/layout_img"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:layout_weight="33"
+	        android:weightSum="100"
+	        android:orientation="vertical" >
+	        <RelativeLayout 
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent" 
+	            >
+	        	<ImageView 
+		            android:id="@+id/item_img"
+			        android:layout_width="fill_parent"
+			        android:layout_height="fill_parent"
+			        android:background="@drawable/checklist_photo" />
+	        	<TextView 
+		            android:id="@+id/item_count"
+			        android:layout_width="fill_parent"
+			        android:layout_height="fill_parent"
+	                android:textColor="#000000"
+	                android:textStyle="bold"
+			        android:text="1" 
+			        android:gravity="right"
+			        />    
+	            
+	        </RelativeLayout>
+	        
+	    </LinearLayout>
+
+	    <LinearLayout 
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:layout_weight="4"
+	        android:weightSum="100"
+	        android:orientation="vertical" >
+	    </LinearLayout>
+	    	    
+	    <LinearLayout 
+	        android:id="@+id/layout_content"
+	        android:layout_width="0dp"
+	        android:layout_height="fill_parent"
+	        android:layout_weight="50"
+	        android:weightSum="100"
+	        android:orientation="vertical" >
+	        <LinearLayout 
+	            android:layout_width="fill_parent"
+		        android:layout_height="0dp"
+		        android:layout_weight="20"
+		        android:weightSum="100"
+		        android:orientation="vertical" >
+	       	 <TextView 
+	            android:id="@+id/item_dogong"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0dp"
+		        android:layout_weight="90"
+		        android:text="dogong"
+		        android:textStyle="bold" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:layout_width="fill_parent"
+		        android:layout_height="0dp"
+		        android:layout_weight="80"
+		        android:weightSum="100"
+		        android:orientation="vertical" >
+	        <TextView 
+	            android:id="@+id/item_content"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0dp"
+		        android:layout_weight="100"
+		        android:text="content"
+		        android:paddingTop="10dp" />
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+	    
+	</LinearLayout>    
+
+</LinearLayout>

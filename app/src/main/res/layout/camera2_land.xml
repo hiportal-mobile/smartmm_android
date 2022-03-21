@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" 
+	android:layout_height="match_parent"
+	android:weightSum="100"
+	android:orientation="horizontal"
+	>
+	<RelativeLayout 
+		android:layout_width="0dp"
+		android:layout_height="match_parent"
+		android:layout_weight="90"
+		>
+		<LinearLayout
+			android:id="@+id/previewLayout"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			>
+			<com.ex.smartmm.common.Preview2 android:id="@+id/camera_preview"
+				android:layout_width="match_parent" android:layout_height="match_parent" />
+		</LinearLayout>
+    	<LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="fill_parent"
+		    android:gravity="center_vertical"
+		    >
+			<com.ex.smartmm.common.VerticalSeekBar
+				android:id="@+id/SeekBar01"
+			    android:progressDrawable="@drawable/progress_vertical"
+			    android:thumb="@drawable/seek_thumb"
+			    android:layout_height="160dp" 
+			    android:layout_width="24dp"
+			    android:layout_marginLeft="10dp"
+			    android:layout_marginBottom="40dp"
+			    android:layout_gravity="center"
+			    />
+		</LinearLayout>
+		
+	    <!-- 태그 추가용 뷰  -->
+	    <LinearLayout
+	        android:id="@+id/ll_adtag"
+		    android:layout_width="fill_parent"
+		    android:layout_height="100dp"
+		    android:layout_alignParentBottom="true"
+		    android:layout_alignParentLeft="true"
+		    android:orientation="vertical"
+			android:layout_margin="1dp"
+			android:weightSum="100"
+			android:gravity="right"
+		    >
+		</LinearLayout>
+	</RelativeLayout>
+    	
+	<LinearLayout 
+	    android:id="@+id/relativeLayout2" 
+	    android:layout_height="match_parent"
+	    android:layout_width="0dp"
+	    android:layout_weight="10"
+		android:background="@drawable/bg_pic" 
+		android:layout_alignParentBottom="true" 
+		android:orientation="vertical"
+		android:gravity="center"
+		android:weightSum="100"
+		>
+		<LinearLayout
+			android:id="@+id/ll_pic"
+			android:layout_width="fill_parent"
+			android:layout_height="0dp"
+			android:layout_weight="100"
+			android:gravity="center"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="0dp"
+				android:layout_weight="25"
+				>
+			    <LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="55"
+					android:weightSum="100"
+					android:orientation="vertical"
+					android:gravity="center"
+					>
+					<CheckBox 
+					    android:id="@+id/chk_tagOnOff"
+						android:layout_height="40dp"
+						android:layout_width="fill_parent"
+						android:text="TAG"
+						android:visibility="gone"
+						>
+					</CheckBox>
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="0dp"
+				android:layout_weight="50"
+				android:gravity="center"
+				>
+				<ImageButton android:id="@+id/ibtnRunShutter"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:padding="0pt"
+					android:contentDescription="촬영"
+					android:background="@drawable/camera_capture"
+					>
+				</ImageButton>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="0dp"
+				android:layout_weight="25"
+				android:weightSum="100"
+				android:orientation="horizontal"
+				android:gravity="center"
+				>
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="55"
+					android:weightSum="100"
+					android:orientation="vertical"
+					android:gravity="center"
+					>
+					<ImageView android:id="@+id/flashOnOff"
+						android:layout_height="40dp"
+						android:layout_width="40dp"
+						android:background="@drawable/boltoff"
+						>
+					</ImageView>
+				</LinearLayout>
+
+			</LinearLayout>
+
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/ll_save"
+			android:layout_width="fill_parent"
+			android:layout_height="0dp"
+			android:layout_weight="100"
+			android:layout_gravity="center"
+			android:gravity="center"
+			android:visibility="gone"
+			android:orientation="vertical"
+			>
+			<ImageButton android:id="@+id/ibtnSave"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:padding="0pt"
+				android:background="@drawable/camera_save"
+				android:contentDescription="저장"
+				>
+			</ImageButton>
+			<ImageButton
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:padding="0pt"
+				android:background="@drawable/camera_save"
+				android:visibility="invisible"
+				>
+			</ImageButton>
+
+			<ImageButton android:id="@+id/ibtnCancel"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:padding="0pt"
+				android:background="@drawable/camera_x"
+				android:contentDescription="취소"
+				>
+			</ImageButton>
+		</LinearLayout>
+	</LinearLayout>
+	
+    	
+    
+</LinearLayout>

@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">스마트정비관리</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBF9r10NDcDRaUEoPsQ9DaYsMtUg2Xaxnc</string>
+    <string name="permission_camera_rationale">저장공간 및 카메라 접근 허용.</string>
+    <string name="ok">OK</string>
+    <string name="permision_available_contacts">Contacts Permissions have been granted. Contacts screen can now be opened.</string>
+    <string name="permissions_not_granted">Permissions were not granted.</string>
+    <string name="permision_available_camera">Camera Permission has been granted. Preview can now be opened.</string>
+    <string name="permision_available_storage">Storage Permission has been granted. Preview can now be opened.</string>
+    <string name="permission_contacts_rationale">Contacts permissions are needed to demonstrate access.</string>
+    <string name="permision_available_callphone">Calling Permission has been granted. Preview can now be opened.</string>
+    <string name="no_data">점검 데이터가 존재하지 않습니다.</string>
+    <string name="nolocation_kr">현재위치 주변에 구조물(교량) 정보가 존재하지 않습니다.</string>
+    <string name="nolocation_tn">현재위치 주변에 구조물(터널) 정보가 존재하지 않습니다.</string>
+    <string name="nolocation_ag">현재위치 주변에 구조물(암거) 정보가 존재하지 않습니다.</string>
+</resources>

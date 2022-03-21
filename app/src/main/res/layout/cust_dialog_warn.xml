@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="150dp"
+    android:weightSum="100"
+    android:gravity="center"
+    android:id="@+id/RelativeLayout01"
+    android:background="@drawable/bg_progress_warn"
+    >
+
+ 	<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="60"
+        android:gravity="center"
+        android:layout_gravity="center"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="100"
+            android:weightSum="100"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView 
+				android:id="@+id/tvPrompt"
+				android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="80"
+				android:textColor="#555555"
+				android:textSize="16dp"
+				android:textStyle="bold"	
+				android:text="노선에 해당하는 이정값이 아닙니다."
+				android:layout_gravity="center"
+				/>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:weightSum="100"
+        >
+	    <LinearLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="90"
+	        android:orientation="horizontal"
+	        android:gravity="center"
+	        android:weightSum="100"
+	        >
+			<ImageButton 
+			    android:layout_height="fill_parent"
+				android:layout_width="0dp"
+				android:layout_weight="26"
+				android:background="@drawable/btn_file_close"			
+				android:id="@+id/ibtnMovie"
+				android:contentDescription="사진"
+				/>
+		   
+	    </LinearLayout>
+        
+	</LinearLayout>
+</LinearLayout>

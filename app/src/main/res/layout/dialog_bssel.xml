@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="220dp"
+    android:orientation="vertical" 
+    android:weightSum="100"
+    >
+    <LinearLayout android:background="#1a73ba"  android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="25" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+		<LinearLayout
+			 android:layout_width="0dp"
+			 android:layout_height="fill_parent"
+			 android:layout_weight="27"
+			 android:gravity="center"
+			 android:weightSum="100"
+			 android:orientation="vertical"
+			 >
+			<ImageView
+				android:layout_width="fill_parent"
+				android:layout_height="0dp"
+				android:layout_weight="48"
+				android:background="@drawable/bssel_title"
+				/>
+		</LinearLayout>
+	</LinearLayout>
+	
+   <LinearLayout android:background="#ffffff"  android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="25" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+	    <!-- 본부 -->
+	    <LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="80"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="80"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+				<TextView 
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="20"
+				    android:text="본부"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    />
+				<LinearLayout
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="75"
+				    android:text="본부선택"
+				    android:gravity="center"
+				    android:orientation="horizontal"
+				    android:background="#eef1f8"
+				    >
+
+					<Spinner
+					    android:id="@+id/sp_bonbu"
+					    android:layout_width="0dp"
+					    android:layout_height="fill_parent"
+					    android:layout_weight="60"
+					    android:background="#eef1f8"
+					    android:gravity="center"
+					    android:text="본부선택"
+					    android:textColor="#000000" />
+
+				    <ImageView 
+				        android:id="@+id/sp_bonbuB"
+					    android:layout_width="0dp"
+					    android:layout_height="fill_parent"
+					    android:layout_weight="15"
+					    android:background="@drawable/main_spinner_arrow"
+					    />
+				</LinearLayout>
+			   
+			</LinearLayout>
+		</LinearLayout>
+
+	</LinearLayout>
+
+   <LinearLayout android:background="#ffffff"  android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="25" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+	    <!-- 지사 -->
+	    <LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="80"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="80"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+				<TextView 
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="20"
+				    android:text="지사"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    />
+			     <LinearLayout
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="75"
+				    android:text="본부선택"
+				    android:gravity="center"
+				    android:orientation="horizontal"
+				    android:background="#eef1f8"
+				    >
+				     <Spinner 
+					    android:id="@+id/sp_jisa"
+					    android:layout_width="0dp"
+					    android:layout_height="fill_parent"
+					    android:layout_weight="60"
+					    android:text="지사선택"
+					    android:gravity="center"
+					    android:textColor="#000000"
+					    android:background="#eef1f8"
+					    />
+				    <ImageView 
+				        android:id="@+id/sp_jisaB"
+					    android:layout_width="0dp"
+					    android:layout_height="fill_parent"
+					    android:layout_weight="15"
+					    android:background="@drawable/main_spinner_arrow"
+					    />
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	
+   <LinearLayout android:background="#ffffff"  android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="25" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+	    <!-- 이정 -->
+	    <LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="80"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="50"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+			    <ImageView 
+			        android:id="@+id/btn_confirm"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="36"
+				    android:background="@drawable/item_btn_confirm"
+				    android:textAlignment="center"
+				    />
+			     <ImageView 
+			        android:id="@+id/btn_cancel"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="36"
+				    android:background="@drawable/item_btn_cancel"
+				    android:textAlignment="center"
+				    android:layout_marginLeft="1dp"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	
+</LinearLayout>

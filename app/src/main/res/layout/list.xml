@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:weightSum="100"
+    android:background="#ffffff"
+    >
+    <!-- title 타이틀 -->
+	<LinearLayout android:background="#1a73ba"  android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="10" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+		<LinearLayout
+			 android:id="@+id/menu"
+			 android:layout_width="0dp"
+			 android:layout_height="fill_parent"
+			 android:layout_weight="28"
+			 android:gravity="center"
+			 android:orientation="vertical"
+			 android:weightSum="100"
+			 >
+			 <LinearLayout 
+			     android:layout_width="fill_parent"
+			     android:layout_height="0dp"
+			     android:layout_weight="80"
+			     android:orientation="horizontal"
+			     android:weightSum="100"
+			     >
+			     <ImageView 
+			         android:id="@+id/btn_back"
+			         android:layout_width="0dp"
+			         android:layout_height="fill_parent"
+			         android:layout_weight="40"
+			         android:background="@drawable/btn_popupprev"
+			         />
+			 </LinearLayout>
+		</LinearLayout>
+		<LinearLayout
+			 android:layout_width="0dp"
+			 android:layout_height="fill_parent"
+			 android:layout_weight="34"
+			 android:gravity="center"
+			 android:weightSum="100"
+			 android:orientation="vertical"
+			 >
+			 <TextView 
+			    android:layout_width="fill_parent"
+				android:layout_height="0dp"
+				android:layout_weight="48"
+				android:gravity="center"
+				android:text="작성조회"
+				android:textColor="#FFFFFF"
+				android:textStyle="bold"
+                android:textSize="25sp"/>
+<!-- 			<ImageView
+				android:layout_width="fill_parent"
+				android:layout_height="0dp"
+				android:layout_weight="48"
+				android:background="@drawable/checklist_title"
+				/>
+ -->		</LinearLayout>
+		
+		<LinearLayout
+			 android:layout_width="0dp"
+			 android:layout_height="fill_parent"
+			 android:layout_weight="28"
+			 android:gravity="center"
+			 android:orientation="vertical"
+			 android:weightSum="100"
+			 >
+			 <LinearLayout 
+			     android:layout_width="fill_parent"
+			     android:layout_height="0dp"
+			     android:layout_weight="74"
+			     android:orientation="horizontal"
+			     android:weightSum="100"
+			     android:gravity="center|right"
+			     >
+			     <ImageView 
+				    android:id="@+id/btn_delImageAll"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="38"
+				    android:gravity="center|right"
+				    android:textColor="#000000"
+				    android:background="@drawable/btn_trash"
+				    />
+			 </LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	
+	<!-- ListView 목록 -->
+	<LinearLayout   android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="81" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+	    <ListView 
+	        android:id="@+id/listView"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        >
+		</ListView>
+    </LinearLayout>
+
+	<!-- 하단 텍스트 -->
+	<LinearLayout   android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="9" android:weightSum="100" android:orientation="vertical" android:gravity="center" >
+	
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="40"
+	        android:orientation="horizontal"
+	        android:weightSum="100"
+	        android:gravity="center"
+	        >
+			<TextView
+			    android:layout_width="0dp"
+			    android:layout_height="fill_parent" 
+			    android:layout_weight="20"
+			    android:text="미전송"
+			    android:textColor="#ff0000"
+			    android:gravity="center"
+			    />
+			<TextView
+			    android:layout_width="0dp"
+			    android:layout_height="fill_parent" 
+			    android:layout_weight="20"
+			    android:text="전송완료"
+			    android:textColor="#0054FF"
+			    android:gravity="center"
+			    />
+	    </LinearLayout>
+    </LinearLayout>
+    
+</LinearLayout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="220dp"
+    android:orientation="vertical" 
+    android:weightSum="100"
+    >
+    <LinearLayout android:background="#0971ce"  android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="25" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+		<LinearLayout
+			 android:layout_width="0dp"
+			 android:layout_height="fill_parent"
+			 android:layout_weight="50"
+			 android:gravity="center"
+			 android:weightSum="100"
+			 android:orientation="vertical"
+			 >
+			<TextView
+				android:layout_width="fill_parent"
+				android:layout_height="0dp"
+				android:layout_weight="48"
+				android:text="단위선택"
+				android:textSize="20sp"
+				android:gravity="center"
+				android:textColor="#ffffff"
+				android:textStyle="bold"
+				/>
+		</LinearLayout>
+	</LinearLayout>
+	
+   <LinearLayout android:background="#ffffff"  android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="18" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+	    <!-- 노선 -->
+	    <LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="80"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="80"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+				
+			    <TextView 
+			        android:id="@+id/txt_mm"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="70"
+				    android:background="@drawable/main_text_short"
+				    android:textAlignment="center"
+				    android:paddingLeft="3dp"
+				    android:text="mm"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+
+	</LinearLayout>
+
+   <LinearLayout android:background="#ffffff"  android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="18" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+	    <!-- 이정 -->
+	    <LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="80"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="80"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+			    <TextView 
+			        android:id="@+id/txt_cm"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="70"
+				    android:background="@drawable/main_text_short"
+				    android:text="cm"
+				    android:textAlignment="center"
+				    android:paddingLeft="3dp"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout android:background="#ffffff"  android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="18" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+	    <!-- 이정 -->
+	    <LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="80"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="80"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+			    <TextView 
+			        android:id="@+id/txt_m"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="70"
+				    android:background="@drawable/main_text_short"
+				    android:text="m"
+				    android:textAlignment="center"
+				    android:paddingLeft="3dp"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	
+	
+   <LinearLayout android:background="#ffffff"  android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="25" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+	    <!-- 이정 -->
+	    <LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="80"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="40"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+			    <ImageView 
+			        android:id="@+id/btn_close"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="30"
+				    android:background="@drawable/location_btn_close"
+				    android:textAlignment="center"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	
+</LinearLayout>

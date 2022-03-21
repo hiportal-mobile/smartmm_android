@@ -1,0 +1,211 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ex.smartmm" >
+
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/icon_smartmm"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar"
+        android:largeHeap="true" >
+
+        <activity
+            android:name="com.ex.smartmm.LoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
+            android:clearTaskOnLaunch="false"
+            android:label="@string/app_name">
+
+            <!-- 앱배포시 바탕화면에 아이콘 보이게-->
+             <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="com.ex.smartmm.LAUNCH_MAIN" />
+                <action android:name="com.aircuve.mcuvic.IMCUVICService" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.MOGROUP"/>
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.ex.smartmm.IntroActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
+            android:clearTaskOnLaunch="false"
+            android:label="@string/app_name">
+
+            <!-- 앱배포시 바탕화면에 아이콘 보이게-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="com.ex.smartmm.LAUNCH_MAIN" />
+                <action android:name="com.aircuve.mcuvic.IMCUVICService" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.MOGROUP"/>
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.ex.smartmm.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:clearTaskOnLaunch="false"
+            android:launchMode="singleTask"
+            >
+            <!-- 앱배포시 바탕화면에 아이콘 보이게-->
+            <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="com.ex.smartmm.LAUNCH_MAIN" />
+                <action android:name="com.aircuve.mcuvic.IMCUVICService" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.MOGROUP"/>
+            </intent-filter> -->
+        </activity>
+
+        <activity
+            android:name="com.ex.smartmm.DialogActivity_BsSel"
+            android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="portrait"
+            android:clearTaskOnLaunch="false"
+            android:launchMode="singleTask"
+            >
+            <intent-filter>
+                <action android:name="mobius.dialog.open"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.ex.smartmm.MultiCameraActivity"
+            android:screenOrientation="landscape"
+            android:clearTaskOnLaunch="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="com.ex.smartmm.AlbumListActivity"
+            android:screenOrientation="portrait"
+            android:clearTaskOnLaunch="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="com.ex.smartmm.PhotoListActivity"
+            android:screenOrientation="portrait"
+            android:clearTaskOnLaunch="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="com.ex.smartmm.PhotoAllListActivity"
+            android:screenOrientation="portrait"
+            android:clearTaskOnLaunch="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="com.ex.smartmm.CheckListActivity2"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:clearTaskOnLaunch="false">
+        </activity>
+
+        <activity
+            android:name="com.ex.smartmm.CheckImageActivity"
+            android:screenOrientation="portrait"
+            android:clearTaskOnLaunch="false"
+            android:launchMode="singleTask">
+        </activity>
+
+
+
+        <!-- ****************************************************************************** -->
+
+
+
+
+
+
+        <activity
+            android:name="com.ex.smartmm.CheckListActivity_bak"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:clearTaskOnLaunch="false" >
+        </activity>
+        <activity
+            android:name="com.ex.smartmm.CheckListActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:clearTaskOnLaunch="false">
+        </activity>
+
+        <activity
+            android:name="com.ex.smartmm.CameraActivity"
+            android:screenOrientation="landscape"
+            android:clearTaskOnLaunch="false"
+            android:launchMode="singleTask">
+        </activity>
+
+
+        <activity
+            android:name="com.ex.smartmm.KyoRyangActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:clearTaskOnLaunch="false"
+            >
+        </activity>
+
+
+        <activity
+            android:name="com.ex.smartmm.DialogActivity"
+            android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="portrait"
+            android:clearTaskOnLaunch="false" >
+            <intent-filter>
+                <action android:name="mobius.dialog.open"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.ex.smartmm.UnitChoiceActivity"
+            android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="portrait"
+            android:clearTaskOnLaunch="false" >
+            <intent-filter>
+                <action android:name="mobius.dialog.open"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+    </application>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+
+    <!-- MO_SAMPLE -->
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+
+    <protected-broadcast android:name="android.intent.action.MEDIA_MOUNTED" />
+
+</manifest>
+

@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:weightSum="100" >
+    
+    <!-- 제목 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:weightSum="100" 
+        android:gravity="center"
+	    android:background="#1a73ba"
+	    android:orientation="horizontal"  >
+	    <LinearLayout
+	        android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="50"
+			android:gravity="center" >
+        	<TextView
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+        	android:gravity="center"
+        	android:textColor="#ffffff"
+        	android:background="#1a73ba"
+        	android:text="스마트 정비관리" >
+        	</TextView>    
+	    </LinearLayout>
+	    <LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="15"
+			android:gravity="center|right"
+			android:weightSum="100"
+			android:orientation="horizontal" >
+			<LinearLayout
+				 android:layout_width="0dp"
+				 android:layout_height="fill_parent"
+				 android:layout_weight="50"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="vertical" >
+				<ImageView
+				    android:id="@+id/btn_X"
+					android:layout_width="fill_parent"
+					android:layout_height="0dp"
+					android:layout_weight="50"
+					android:gravity="center"
+					android:background="@drawable/item_btn_close" />
+			</LinearLayout>
+		</LinearLayout>
+    </LinearLayout>
+    
+   	<!-- 보드판 내용 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18"
+        android:weightSum="100"
+        android:background="#a5e8f6"
+        android:orientation="vertical" >
+	    <LinearLayout
+	        android:layout_width="match_parent"
+        	android:layout_height="0dp"
+        	android:layout_weight="50"
+        	android:weightSum="100"
+        	android:orientation="horizontal"
+        	android:background="#ffffff" >
+			<LinearLayout
+			    android:layout_width="0dp"
+        	    android:layout_height="match_parent"
+        	    android:layout_weight="33"
+        	    android:gravity="center"
+        	    android:background="#6ef3a9"
+        	    android:layout_marginTop="20dp"
+            	android:layout_marginBottom="2dp"
+            	android:layout_marginLeft="15dp"
+            	android:layout_marginRight="2dp"
+            	android:orientation="vertical" >
+				<LinearLayout
+				    android:layout_width="fill_parent"
+					android:layout_height="0dp"
+					android:layout_weight="86"
+					android:gravity="center"
+					android:weightSum="100"
+					android:orientation="horizontal"
+					android:background="#eef1f8" >
+					<Spinner
+					    android:id="@+id/sp_gubun"
+						android:layout_width="0dp"
+						android:layout_height="fill_parent"
+						android:layout_weight="70"
+						android:text="종별"
+						android:gravity="center"
+						android:textColor="#000000"
+						android:background="#eef1f8"
+						android:spinnerMode="dropdown" />
+					    <ImageView
+					        android:id="@+id/sp_gubunlB"
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="30"
+						    android:background="@drawable/main_spinner_arrow" />
+				</LinearLayout>
+            </LinearLayout>
+           
+            <!-- 교량명 입력 -->
+            <LinearLayout
+                android:layout_width="0dp"
+        	    android:layout_height="fill_parent"
+        	    android:layout_weight="66"
+        	    android:weightSum="100"
+        	    android:gravity="right|center"
+        	    android:layout_marginTop="20dp"
+            	android:layout_marginBottom="2dp"
+            	android:layout_marginLeft="2dp"
+            	android:layout_marginRight="15dp"
+            	android:background="@drawable/bg_inputbox"
+            	android:orientation="vertical" >
+				<RelativeLayout
+				    android:layout_width="fill_parent"
+					android:layout_height="0dp"
+					android:layout_weight="80"
+					android:weightSum="100"
+					android:orientation="horizontal" >
+					<LinearLayout
+					    android:layout_width="fill_parent"
+					    android:layout_height="fill_parent"
+					    android:orientation="horizontal"
+					    android:weightSum="100"
+					    android:gravity="left"
+					    android:background="#eef1f8" >
+					    <TextView
+					        android:id="@+id/txt_krname"
+							android:layout_width="0dp"
+							android:layout_height="fill_parent"
+							android:layout_weight="80"
+							android:gravity="center"
+							android:textColor="#000000"
+							android:background="#eef1f8"
+							android:layout_gravity="left"
+							android:hint="교량명" >
+						</TextView>
+				    </LinearLayout>
+				    <LinearLayout
+				        android:layout_width="fill_parent"
+					    android:layout_height="fill_parent"
+					    android:weightSum="100"
+					    android:gravity="right|center"
+					    android:orientation="horizontal" >
+					    <LinearLayout
+					        android:layout_width="0dp"
+					        android:layout_height="fill_parent"
+					        android:weightSum="100"
+					        android:orientation="vertical"
+					        android:layout_weight="16"
+					        android:gravity="center" >
+					        <ImageView
+					            android:id="@+id/btn_txt_krname"
+						        android:layout_width="fill_parent"
+							    android:layout_height="0dp"
+							    android:layout_weight="70"
+							    android:gravity="right|center"
+							    android:background="@drawable/item_btn_close" />
+					    </LinearLayout>
+					  </LinearLayout>
+				</RelativeLayout>
+			</LinearLayout>
+        </LinearLayout>
+ 
+	    
+   		<!-- 둘째줄 -->
+   		<LinearLayout
+   		    android:layout_width="match_parent"
+        	android:layout_height="0dp"
+        	android:layout_weight="50"
+        	android:weightSum="100"
+            android:orientation="horizontal" >
+            <!-- 정비구분 -->
+        	<LinearLayout
+        	    android:layout_width="0dp"
+        	    android:layout_height="fill_parent"
+        	    android:layout_weight="33"
+        	    android:weightSum="100"
+        	    android:gravity="center"
+        	    android:background="#6ef3a9"
+        	    android:layout_marginTop="2dp"
+            	android:layout_marginBottom="20dp"
+            	android:layout_marginLeft="15dp"
+            	android:layout_marginRight="2dp"
+            	android:orientation="vertical" >
+				<RelativeLayout
+				    android:layout_width="fill_parent"
+					android:layout_height="0dp"
+					android:layout_weight="100"
+					android:gravity="center"
+					android:weightSum="100"
+					android:orientation="horizontal"
+					android:background="#eef1f8" >
+				    <LinearLayout
+				        android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:weightSum="100"
+						android:orientation="horizontal" >
+					    <Spinner
+					        android:id="@+id/sp_bjae1" 
+							android:layout_width="0dp"
+							android:layout_height="fill_parent"
+							android:layout_weight="80"
+							android:text="부재"
+							android:gravity="center"
+							android:textColor="#000000"
+							android:background="#eef1f8" >
+					    </Spinner>
+					</LinearLayout>
+					<LinearLayout
+					    android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:weightSum="100"
+						android:orientation="horizontal"
+						android:gravity="right" >
+					    <ImageView
+					        android:id="@+id/sp_bjae1B"
+							android:layout_width="0dp"
+							android:layout_height="fill_parent"
+							android:layout_weight="100"
+							android:background="@drawable/main_spinner_arrow" />
+					</LinearLayout>
+ 			    </RelativeLayout>
+        	</LinearLayout>
+        	
+        	
+         	
+        	
+        	<!-- 수리항목 -->
+        	<LinearLayout
+        	    android:layout_width="0dp"
+        	    android:layout_height="fill_parent"
+        	    android:layout_weight="33"
+        	    android:weightSum="100"
+        	    android:gravity="center"
+        	    android:background="#95f2bf"
+        	    android:layout_marginTop="2dp"
+            	android:layout_marginBottom="20dp"
+            	android:layout_marginLeft="2dp"
+            	android:layout_marginRight="2dp"
+            	android:orientation="vertical" >
+				<RelativeLayout
+				    android:layout_width="fill_parent"
+					android:layout_height="0dp"
+					android:layout_weight="86"
+					android:gravity="center"
+					android:weightSum="100"
+					android:orientation="horizontal"
+					android:background="#eef1f8" >
+					<LinearLayout
+					    android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:weightSum="100"
+						android:orientation="horizontal" >
+						<Spinner
+						    android:id="@+id/sp_bjae2"
+							android:layout_width="0dp"
+							android:layout_height="fill_parent"
+							android:layout_weight="80"
+							android:text="부재"
+							android:gravity="center"
+							android:textColor="#000000"
+							android:background="#eef1f8" />
+				    </LinearLayout>
+					<LinearLayout
+					    android:layout_width="fill_parent"
+						android:layout_height="fill_parent"
+						android:weightSum="100"
+						android:orientation="horizontal"
+						android:gravity="right" >
+						<ImageView 
+						    android:id="@+id/sp_bjae2B"
+							android:layout_width="0dp"
+							android:layout_height="fill_parent"
+							android:layout_weight="100"
+							android:background="@drawable/bg_selectbox" />
+					</LinearLayout>
+				</RelativeLayout>
+        	</LinearLayout>
+        	
+        	
+        	<!-- 세부항목 -->
+        	<LinearLayout
+        	    android:layout_width="0dp"
+        	    android:layout_height="fill_parent"
+        	    android:layout_weight="33"
+        	    android:weightSum="100"
+        	    android:gravity="center"
+        	    android:background="#6ef3a9"
+        	    android:layout_marginTop="2dp"
+            	android:layout_marginBottom="20dp"
+            	android:layout_marginLeft="2dp"
+            	android:layout_marginRight="15dp"
+            	android:orientation="vertical" >
+				<RelativeLayout
+						 android:layout_width="fill_parent"
+						 android:layout_height="0dp"
+						 android:layout_weight="86"
+						 android:gravity="center"
+						 android:weightSum="100"
+						 android:orientation="horizontal"
+						 android:background="#eef1f8"
+						 >
+					    <LinearLayout
+						    android:layout_width="fill_parent"
+						    android:layout_height="fill_parent"
+						    android:weightSum="100"
+						    android:orientation="horizontal"
+						    >
+						    <Spinner
+							    android:id="@+id/sp_bjae3" 
+							    android:layout_width="0dp"
+							    android:layout_height="fill_parent"
+							    android:layout_weight="80"
+							    android:text="부재"
+							    android:gravity="center"
+							    android:textColor="#000000"
+							    android:background="#eef1f8"
+							    />
+					    </LinearLayout>
+						
+						<LinearLayout
+						    android:layout_width="fill_parent"
+						    android:layout_height="fill_parent"
+						    android:weightSum="100"
+						    android:orientation="horizontal"
+						    android:gravity="right"
+						    >
+						    <EditText 
+						        android:id="@+id/ed_write"
+						        android:layout_width="0dp"
+						        android:layout_height="fill_parent"
+						        android:layout_weight="70"
+						        android:textColor="#000000"
+							    android:background="#eef1f8"
+							    android:visibility="gone"
+							    android:padding="3dp"
+							    android:singleLine="true"
+						        >
+						    </EditText>
+							<ImageView
+						        android:id="@+id/sp_bjae3B"
+							    android:layout_width="0dp"
+							    android:layout_height="fill_parent"
+							    android:layout_weight="100"
+							    android:background="@drawable/bg_selectbox"
+							    />
+						</LinearLayout>
+					    
+					</RelativeLayout>
+       	</LinearLayout>
+        	
+        	<LinearLayout
+        	    android:layout_width="0dp"
+        	    android:layout_height="match_parent"
+        	    android:layout_weight="5"
+        	    android:gravity="center"
+        	    android:background="#f1f1f1" >
+        	</LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+	
+	<!-- 내용 -->
+	<RelativeLayout   
+	    android:layout_width="fill_parent" 
+	    android:layout_height="0dp" 
+	    android:layout_weight="30" 
+	    android:weightSum="100" 
+	    android:gravity="center"
+	    android:orientation="horizontal" 
+	    android:background="#ffffff" >
+		<LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical"
+	        android:weightSum="56">
+			<!-- 여백 -->
+			
+			
+			<LinearLayout   android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="1.5" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+		    </LinearLayout>
+			
+		    
+	        
+		    
+		    
+		    
+		    <!-- 상세내용 1줄 -->
+			<LinearLayout   
+			    android:layout_width="fill_parent" 
+			    android:layout_height="0dp" 
+			    android:layout_weight="5" 
+			    android:weightSum="100" 
+			    android:orientation="horizontal" 
+			    android:gravity="center" >
+			    <!-- 노선 -->
+			    <LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="56"
+					android:gravity="center"
+					android:weightSum="100"
+					android:orientation="vertical"
+					>
+					<LinearLayout
+						 android:layout_width="fill_parent"
+						 android:layout_height="0dp"
+						 android:layout_weight="80"
+						 android:gravity="center"
+						 android:weightSum="100"
+						 android:orientation="horizontal"
+						 >
+						<TextView 
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="30"
+						    android:text="기관명"
+						    android:gravity="center|left"
+						    android:textColor="#4C4C4C"
+						    android:background="@drawable/underline"
+						    />
+						<TextView 
+						    android:id="@+id/txt_buseo"
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="60"
+						    android:text=""
+						    android:gravity="center|left"
+						    android:textColor="#A6A6A6"
+						    android:padding="3dp"
+						    android:background="@drawable/underline"
+						    />
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="2"
+					>
+				</LinearLayout>
+				<!-- 이정 -->
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="35"
+					android:gravity="center"
+					android:weightSum="100"
+					android:orientation="vertical"
+					>
+					<LinearLayout
+						 android:layout_width="fill_parent"
+						 android:layout_height="0dp"
+						 android:layout_weight="80"
+						 android:gravity="center"
+						 android:weightSum="100"
+						 android:orientation="horizontal"
+						 >
+						<TextView 
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="30"
+						    android:text="정비명"
+						    android:gravity="center|left"
+						    android:textColor="#4C4C4C"
+						    android:background="@drawable/underline"
+						    />
+					    <TextView 
+					        android:id="@+id/txt_jangbi"
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="50"
+						    android:text=""
+						    android:gravity="center|left"
+						    android:textColor="#A6A6A6"
+						    android:padding="3dp"
+						    android:background="@drawable/underline"
+						    />
+					</LinearLayout>
+				</LinearLayout>
+				
+			</LinearLayout>
+			<!-- 상세내용 2줄 -->	
+			<LinearLayout   
+			    android:layout_width="fill_parent" 
+			    android:layout_height="0dp" 
+			    android:layout_weight="5" 
+			    android:weightSum="100" 
+			    android:orientation="horizontal" 
+			    android:gravity="center" >
+			    <LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="94"
+					android:gravity="center"
+					android:weightSum="100"
+					android:orientation="vertical"
+					>
+					<LinearLayout
+						 android:layout_width="fill_parent"
+						 android:layout_height="0dp"
+						 android:layout_weight="80"
+						 android:gravity="center"
+						 android:weightSum="100"
+						 android:orientation="horizontal"
+						 >
+						<TextView 
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="16"
+						    android:text="등록번호"
+						    android:gravity="center|left"
+						    android:textColor="#4C4C4C"
+						    android:background="@drawable/underline"
+						    />
+						<TextView 
+						    android:id="@+id/txt_drno"
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="76"
+						    android:text=""
+						    android:gravity="center|left"
+						    android:textColor="#A6A6A6"
+						    android:padding="3dp"
+						    android:background="@drawable/underline"
+						    />
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+			<!-- 상세내용 3줄 -->
+			<LinearLayout   android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="5" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+			    <!-- 상부형식(2종) -->
+			    <LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="88"
+					android:gravity="center"
+					android:weightSum="100"
+					android:orientation="vertical"
+					>
+					<LinearLayout
+						 android:layout_width="fill_parent"
+						 android:layout_height="0dp"
+						 android:layout_weight="80"
+						 android:gravity="center"
+						 android:weightSum="100"
+						 android:orientation="horizontal"
+						 >
+						<TextView 
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="35"
+						    android:text="차명"
+						    android:gravity="center|left"
+						    android:textColor="#4C4C4C"
+						    android:background="@drawable/underline"
+						    />
+						<TextView 
+						    android:id="@+id/txt_chajong"
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="65"
+						    android:text=""
+						    android:gravity="center|left"
+						    android:textColor="#A6A6A6"
+						    android:padding="3dp"
+						    android:background="@drawable/underline"
+						    />
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="2"
+					>
+				</LinearLayout>
+				
+			</LinearLayout>
+			
+			<!-- 상세내용 4줄 -->
+			<LinearLayout   android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="5" android:weightSum="100" android:orientation="horizontal" android:gravity="center" >
+			    <!-- 신축이음형식 -->
+			    <LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="88"
+					android:gravity="center"
+					android:weightSum="100"
+					android:orientation="vertical"
+					>
+					<LinearLayout
+						 android:layout_width="fill_parent"
+						 android:layout_height="0dp"
+						 android:layout_weight="80"
+						 android:gravity="center"
+						 android:weightSum="100"
+						 android:orientation="horizontal"
+						 >
+						<TextView 
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="35"
+						    android:text="규격"
+						    android:gravity="center|left"
+						    android:textColor="#4C4C4C"
+						    android:background="@drawable/underline"
+						    />
+						<TextView 
+						    android:id="@+id/txt_gyugyeok"
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="65"
+						    android:text=""
+						    android:gravity="center|left"
+						    android:textColor="#A6A6A6"
+						    android:padding="3dp"
+						    android:background="@drawable/underline"
+						    />
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="2"
+					>
+				</LinearLayout>
+				
+			</LinearLayout>
+	    </LinearLayout>
+	    
+	    <!-- 교량 목록 교량 리스트 -->
+		<LinearLayout
+		    android:id="@+id/ll_krlist"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="horizontal"
+	        android:weightSum="100"
+	        android:gravity="center"
+	        android:visibility="gone"
+	        >
+			<!-- <LinearLayout
+		        android:layout_width="0dp"
+		        android:layout_height="match_parent"
+		        android:orientation="vertical"
+		        android:layout_weight="31"
+		        android:weightSum="56"
+		        android:gravity="bottom"
+		        >
+			</LinearLayout> -->
+			<LinearLayout
+		        android:layout_width="0dp"
+		        android:layout_height="match_parent"
+		        android:orientation="vertical"
+		        android:layout_weight="94"
+		        android:weightSum="56"
+		        android:gravity="top|center"
+		        >
+				<LinearLayout
+			        android:layout_width="fill_parent"
+				    android:layout_height="0dp"
+			        android:orientation="vertical"
+			        android:layout_weight="2"
+			        android:weightSum="56"
+			        android:gravity="bottom"
+			        >
+				</LinearLayout>
+				<!-- 교량 -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+				    android:layout_height="0dp"
+				    android:layout_weight="7"
+					android:gravity="center"
+					android:weightSum="100"
+					android:orientation="vertical"
+					>
+					<LinearLayout
+						 android:layout_width="fill_parent"
+						 android:layout_height="0dp"
+						 android:layout_weight="80"
+						 android:weightSum="100"
+						 android:orientation="horizontal"
+						 android:gravity="left"
+						 >
+					    <TextView
+					        android:id="@+id/txt_frontjongbyul"
+					        android:layout_width="0dp"
+					        android:layout_height="fill_parent"
+					        android:layout_weight="28"
+					        />
+						<EditText 
+						    android:id="@+id/ed_krname"
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="40"
+						    android:text=""
+						    android:gravity="center"
+						    android:textColor="#000000"
+						    android:layout_gravity="left"
+						    android:background="#eef1f8"
+						    />
+						
+						<LinearLayout
+						    android:layout_width="0dp"
+						    android:layout_height="fill_parent"
+						    android:layout_weight="8"
+						    android:gravity="center"
+						    android:orientation="vertical"
+						    android:background="#eef1f8"
+						    android:weightSum="100"
+						    >
+							<ImageView 
+							    android:id="@+id/btn_ed_krname"
+							    android:layout_width="fill_parent"
+							    android:layout_height="0dp"
+							    android:layout_weight="80"
+							    android:gravity="center"
+							    android:textColor="#000000"
+							    android:layout_gravity="left"
+							    android:background="@drawable/item_btn_close"
+							    />    
+					    </LinearLayout>
+					    <TextView
+					        android:id="@+id/txt_frontgiban"
+					        android:layout_width="0dp"
+					        android:layout_height="fill_parent"
+					        android:layout_weight="28"
+					        />
+					</LinearLayout>
+				</LinearLayout>
+				
+				<LinearLayout
+				    android:id="@+id/ll_kr"
+				    android:layout_width="fill_parent"
+				    android:layout_height="0dp"
+				    android:layout_weight="39"
+				    android:orientation="vertical"
+				    android:weightSum="100"
+				    android:gravity="center"
+				    android:background="@drawable/border_style_ll_white"
+				    >
+				    <ListView
+					    android:id="@+id/lv_kr"
+					    android:layout_width="fill_parent"
+					    android:layout_height="0dp"
+					    android:background="#ffffff"
+					    android:layout_weight="99"
+					    >
+					</ListView>
+				</LinearLayout>
+				
+			</LinearLayout>
+			
+		</LinearLayout>
+	</RelativeLayout >
+
+	<!-- 여백 -->
+	<LinearLayout   
+	    android:layout_width="fill_parent" 
+	    android:layout_height="0dp" 
+	    android:layout_weight="1.4" 
+	    android:weightSum="100" 
+	    android:orientation="horizontal" 
+	    android:gravity="center" >
+    </LinearLayout>	
+    
+	<!-- 하단버튼 -->
+	
+	<!-- 서버전송, 점검내용 보기 -->
+	<LinearLayout   
+	    android:layout_width="fill_parent" 
+	    android:layout_height="0dp" 
+	    android:layout_weight="10" 
+	    android:weightSum="100" 
+	    android:orientation="horizontal" 
+	    android:gravity="center" >
+		<!-- 서버전송 -->
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="47"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="90"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+				<ImageView 
+				    android:id="@+id/btn_sendImage"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="100"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    android:background="@drawable/item_btn_goserver"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="2"
+			android:gravity="center">
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="47"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="90"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+				<ImageView
+				    android:id="@+id/btn_BoardCamera" 
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="100"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    android:background="@drawable/item_btn_boardcamera"
+				    />
+				
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	
+	<!-- 휴대폰 사진삭제, 보드판 모드 촬영 -->
+	<LinearLayout   
+	    android:layout_width="fill_parent" 
+	    android:layout_height="0dp" 
+	    android:layout_weight="10" 
+	    android:weightSum="100" 
+	    android:orientation="horizontal" 
+	    android:gravity="center" >
+		<!-- 휴대폰 사진삭제 -->
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="47"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="90"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+				<ImageView 
+				    android:id="@+id/btn_delImage"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="100"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    android:background="@drawable/item_btn_delimage"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="2"
+			android:gravity="center">
+		</LinearLayout>
+		<!-- 보드판 모드 촬영 -->
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="47"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="90"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+				<ImageView 
+				    android:id="@+id/btn_NormalCamera"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="100"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    android:background="@drawable/item_btn_gocamera"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	
+	<!-- 내위치, OneShot 촬영 -->
+	<LinearLayout   
+	    android:layout_width="fill_parent" 
+	    android:layout_height="0dp" 
+	    android:layout_weight="10" 
+	    android:weightSum="100" 
+	    android:orientation="horizontal" 
+	    android:gravity="center" >
+		<!-- 내위치 -->
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="47"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="90"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+				<ImageView
+				    android:id="@+id/btn_myLocation" 
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="100"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    android:background="@drawable/item_btn_mylocation"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="2"
+			android:gravity="center">
+		</LinearLayout>
+		<!-- OneShot 촬영 -->
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_weight="47"
+			android:gravity="center"
+			android:weightSum="100"
+			android:orientation="vertical"
+			>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="90"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="horizontal"
+				 >
+				<ImageView 
+				    android:id="@+id/btn_JgList"
+				    android:layout_width="0dp"
+				    android:layout_height="fill_parent"
+				    android:layout_weight="100"
+				    android:gravity="center"
+				    android:textColor="#000000"
+				    android:background="@drawable/item_btn_gocheck"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	
+</LinearLayout>

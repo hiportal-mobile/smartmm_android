@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <LinearLayout -->
+<RelativeLayout
+   xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:background="#ffffff"  
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent" 
+        android:weightSum="100" 
+        android:orientation="horizontal" 
+        android:gravity="center">
+        
+        <!-- 선택 -->
+		<LinearLayout
+		    android:id="@+id/layout_checkbox"
+			 android:layout_width="0dp"
+			 android:layout_height="100dp"
+			 android:layout_weight="13"
+			 android:gravity="center"
+			 android:weightSum="100"
+			 android:paddingLeft="15px"
+			 android:background="#FFD9EC"
+			 android:orientation="vertical" >
+			<CheckBox
+			    android:id="@+id/item_select"
+				android:layout_width="fill_parent"
+				android:layout_height="0dp"
+				android:focusable="false"
+        		android:clickable="false"
+				android:layout_weight="35"  />
+		</LinearLayout>
+		<!-- 사진 -->
+		<LinearLayout
+			 android:layout_width="0dp"
+			 android:layout_height="100dp"
+			 android:layout_weight="33"
+			 android:gravity="center"
+			 android:weightSum="100"
+			 android:background="#FFD9EC"
+			 android:orientation="vertical" >
+			
+			<ImageView
+			    android:id="@+id/item_img"
+				android:layout_width="fill_parent"
+				android:layout_height="0dp"
+				android:layout_weight="70"
+				android:background="@drawable/checklist_photo" > 
+			</ImageView>
+			<TextView
+			        android:id="@+id/item_count"
+				android:layout_width="fill_parent"
+				android:layout_height="0dp"
+				android:layout_weight="30"
+				android:text="count" >
+			    </TextView>
+		</LinearLayout>
+		<!-- 여백 -->
+		<LinearLayout
+			 android:layout_width="0dp"
+			 android:layout_height="fill_parent"
+			 android:layout_weight="4"
+			 android:gravity="center"
+			 android:weightSum="100"
+			 android:orientation="vertical"
+			 android:background="#FFD9EC" >
+		</LinearLayout>
+		<!-- 데이터 내용 -->
+		<LinearLayout
+			 android:layout_width="0dp"
+			 android:layout_height="fill_parent"
+			 android:layout_weight="50"
+			 android:gravity="center"
+			 android:weightSum="100"
+			 android:paddingLeft="15px"
+			 android:background="#FFD9EC"
+			 android:orientation="vertical" >
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="20"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="vertical" >
+				 <TextView
+				     android:id="@+id/item_dogong"
+					android:layout_width="fill_parent"
+					android:layout_height="0dp"
+					android:layout_weight="90"
+					android:textColor="#FF0000"
+					android:gravity="center|left"
+					android:textStyle="bold" />
+			 </LinearLayout>
+			<LinearLayout
+				 android:layout_width="fill_parent"
+				 android:layout_height="0dp"
+				 android:layout_weight="70"
+				 android:gravity="center"
+				 android:weightSum="100"
+				 android:orientation="vertical" >
+				 <TextView
+				    android:id="@+id/item_content"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:textColor="#FF0000"
+					android:gravity="center|left" />
+			 </LinearLayout>
+		</LinearLayout>
+		<!-- 버튼 -->
+		<!-- <LinearLayout
+			 android:layout_width="0dp"
+			 android:layout_height="fill_parent"
+			 android:layout_weight="16"
+			 android:gravity="center"
+			 android:weightSum="100"
+			 android:orientation="vertical" >
+			<ImageView 
+			    android:id="@+id/btn_send"
+			    android:layout_width="fill_parent"
+			    android:layout_height="0dp"
+			    android:layout_weight="36"
+			    android:layout_marginBottom="2dp"
+			    android:background="@drawable/send_btn_3" />
+			
+			<ImageView 
+			    android:id="@+id/btn_del"
+			    android:layout_width="fill_parent"
+			    android:layout_height="0dp"
+			    android:layout_weight="36"
+			    android:background="@drawable/del_btn_2"
+			    android:layout_marginTop="2dp" />
+		</LinearLayout> -->
+		
+	</LinearLayout>
+<!-- </LinearLayout> -->
+</RelativeLayout>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login3"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="65" >
+        </LinearLayout>
+        <!-- 비밀번호 입력창 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+            <EditText
+                android:id="@+id/ed_userid"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:background="@drawable/input_userid"
+                android:hint="사원번호"
+                android:maxLength="15"
+                android:paddingLeft="50dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <!-- 로그인 버튼 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <ImageView
+                android:id="@+id/btn_login"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:background="@drawable/item_btn_login" />
+        </LinearLayout>
+    </LinearLayout>
+
+<!--      <LinearLayout
+        android:id="@+id/ll_login2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="65" >
+        </LinearLayout>
+        비밀번호 입력창
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+            <EditText
+                android:id="@+id/ed_userid2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:background="@drawable/input_userid"
+                android:hint="사원번호"
+                android:maxLength="15"
+                android:paddingLeft="50dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        로그인 버튼
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:background="@drawable/item_btn_login" />
+        </LinearLayout>
+    </LinearLayout>
+ -->    
+     <LinearLayout
+        android:id="@+id/ll_choicejakup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_choicejakup"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center|bottom"
+            android:orientation="vertical"
+            android:weightSum="100" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:gravity="right|top"
+                android:orientation="vertical"
+                android:weightSum="100" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="29"
+                android:gravity="right|top"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="21"
+                    android:gravity="right|top"
+                    android:orientation="vertical"
+                    android:weightSum="100" >
+
+                    <TextView
+                        android:id="@+id/btn_logout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="18"
+                        android:background="@drawable/btn_logout"
+                        android:gravity="right|top"
+                        android:textColor="@color/red" >
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="3"
+                    android:gravity="right|top"
+                    android:orientation="vertical"
+                    android:weightSum="100" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="22"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="96"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:weightSum="100" >
+
+                    <ImageView
+                        android:id="@+id/btn_kr"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="96"
+                        android:background="@drawable/item_btn_bridge"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="22"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="96"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:weightSum="100" >
+
+                    <ImageView
+                        android:id="@+id/btn_tn"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="96"
+                        android:background="@drawable/item_btn_tunnel"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="22"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="96"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:weightSum="100" >
+
+                    <ImageView
+                        android:id="@+id/btn_ag"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="96"
+                        android:background="@drawable/item_btn_amgeo"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout> 
+
+</LinearLayout>

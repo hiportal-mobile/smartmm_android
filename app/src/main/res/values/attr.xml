@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ProgressBar">
+        <attr name="android:progressDrawable" />
+        <attr name="android:minWidth" />
+        <attr name="android:maxWidth" />
+        <attr name="android:minHeight" />
+        <attr name="android:maxHeight" />
+        <attr name="android:max" />
+        <attr name="android:progress" />
+        <attr name="android:secondaryProgress" />
+    </declare-styleable>
+
+
+
+    <declare-styleable name="SeekBar">
+        <attr name="android:thumb" />
+        <attr name="android:thumbOffset" />
+    </declare-styleable>
+    <declare-styleable name="Theme">
+        <attr name="android:disabledAlpha" />
+    </declare-styleable>
+    
+    <declare-styleable name="AppCompatTheme">
+
+        <!-- ============= -->
+        <!-- Window styles -->
+        <!-- ============= -->
+        <eat-comment />
+
+        <!-- Flag indicating whether this window should have an Action Bar
+             in place of the usual title bar. -->
+        <attr name="windowActionBar" format="boolean" />
+
+        <!-- Flag indicating whether there should be no title on this window. -->
+        <attr name="windowNoTitle" format="boolean" />
+
+        <!-- Flag indicating whether this window's Action Bar should overlay
+             application content. Does nothing if the window would not
+             have an Action Bar. -->
+        <attr name="windowActionBarOverlay" format="boolean" />
+
+        <!-- Flag indicating whether action modes should overlay window content
+             when there is not reserved space for their UI (such as an Action Bar). -->
+        <attr name="windowActionModeOverlay" format="boolean" />
+
+        <!-- A fixed width for the window along the major axis of the screen,
+             that is, when in landscape. Can be either an absolute dimension
+             or a fraction of the screen size in that dimension. -->
+        <attr name="windowFixedWidthMajor" format="dimension|fraction" />
+        <!-- A fixed height for the window along the minor axis of the screen,
+             that is, when in landscape. Can be either an absolute dimension
+             or a fraction of the screen size in that dimension. -->
+        <attr name="windowFixedHeightMinor" format="dimension|fraction" />
+
+        <!-- A fixed width for the window along the minor axis of the screen,
+             that is, when in portrait. Can be either an absolute dimension
+             or a fraction of the screen size in that dimension. -->
+        <attr name="windowFixedWidthMinor" format="dimension|fraction" />
+        <!-- A fixed height for the window along the major axis of the screen,
+             that is, when in portrait. Can be either an absolute dimension
+             or a fraction of the screen size in that dimension. -->
+        <attr name="windowFixedHeightMajor" format="dimension|fraction" />
+
+        <!-- The minimum width the window is allowed to be, along the major
+             axis of the screen.  That is, when in landscape.  Can be either
+             an absolute dimension or a fraction of the screen size in that
+             dimension. -->
+        <attr name="windowMinWidthMajor" format="dimension|fraction" />
+        <!-- The minimum width the window is allowed to be, along the minor
+             axis of the screen.  That is, when in portrait.  Can be either
+             an absolute dimension or a fraction of the screen size in that
+             dimension. -->
+        <attr name="windowMinWidthMinor" format="dimension|fraction" />
+
+        <attr name="android:windowIsFloating" />
+        <attr name="android:windowAnimationStyle" />
+
+        <!-- =================== -->
+        <!-- Action bar styles   -->
+        <!-- =================== -->
+        <eat-comment />
+        <!-- Default style for tabs within an action bar -->
+        <attr name="actionBarTabStyle" format="reference" />
+        <attr name="actionBarTabBarStyle" format="reference" />
+        <attr name="actionBarTabTextStyle" format="reference" />
+        <attr name="actionOverflowButtonStyle" format="reference" />
+        <attr name="actionOverflowMenuStyle" format="reference" />
+        <!-- Reference to a theme that should be used to inflate popups
+             shown by widgets in the action bar. -->
+        <attr name="actionBarPopupTheme" format="reference" />
+        <!-- Reference to a style for the Action Bar -->
+        <attr name="actionBarStyle" format="reference" />
+        <!-- Reference to a style for the split Action Bar. This style
+             controls the split component that holds the menu/action
+             buttons. actionBarStyle is still used for the primary
+             bar. -->
+        <attr name="actionBarSplitStyle" format="reference" />
+        <!-- Reference to a theme that should be used to inflate the
+             action bar. This will be inherited by any widget inflated
+             into the action bar. -->
+        <attr name="actionBarTheme" format="reference" />
+        <!-- Reference to a theme that should be used to inflate widgets
+             and layouts destined for the action bar. Most of the time
+             this will be a reference to the current theme, but when
+             the action bar has a significantly different contrast
+             profile than the rest of the activity the difference
+             can become important. If this is set to @null the current
+             theme will be used.-->
+        <attr name="actionBarWidgetTheme" format="reference" />
+        <!-- Size of the Action Bar, including the contextual
+             bar used to present Action Modes. -->
+        <attr name="actionBarSize" format="dimension" >
+            <enum name="wrap_content" value="0" />
+        </attr>
+        <!-- Custom divider drawable to use for elements in the action bar. -->
+        <attr name="actionBarDivider" format="reference" />
+        <!-- Custom item state list drawable background for action bar items. -->
+        <attr name="actionBarItemBackground" format="reference" />
+        <!-- TextAppearance style that will be applied to text that
+             appears within action menu items. -->
+        <attr name="actionMenuTextAppearance" format="reference" />
+        <!-- Color for text that appears within action menu items. -->
+        <!-- Color for text that appears within action menu items. -->
+        <attr name="actionMenuTextColor" format="color|reference"/>
+
+
+        <!-- =================== -->
+        <!-- Action mode styles  -->
+        <!-- =================== -->
+        <eat-comment/>
+        <attr name="actionModeStyle" format="reference"/>
+        <attr name="actionModeCloseButtonStyle" format="reference"/>
+        <!-- Background drawable to use for action mode UI -->
+        <attr name="actionModeBackground" format="reference"/>
+        <!-- Background drawable to use for action mode UI in the lower split bar -->
+        <attr name="actionModeSplitBackground" format="reference"/>
+        <!-- Drawable to use for the close action mode button -->
+        <attr name="actionModeCloseDrawable" format="reference"/>
+        <!-- Drawable to use for the Cut action button in Contextual Action Bar -->
+        <attr name="actionModeCutDrawable" format="reference"/>
+        <!-- Drawable to use for the Copy action button in Contextual Action Bar -->
+        <attr name="actionModeCopyDrawable" format="reference"/>
+        <!-- Drawable to use for the Paste action button in Contextual Action Bar -->
+        <attr name="actionModePasteDrawable" format="reference"/>
+        <!-- Drawable to use for the Select all action button in Contextual Action Bar -->
+        <attr name="actionModeSelectAllDrawable" format="reference"/>
+        <!-- Drawable to use for the Share action button in WebView selection action modes -->
+        <attr name="actionModeShareDrawable" format="reference"/>
+        <!-- Drawable to use for the Find action button in WebView selection action modes -->
+        <attr name="actionModeFindDrawable" format="reference"/>
+        <!-- Drawable to use for the Web Search action button in WebView selection action modes -->
+        <attr name="actionModeWebSearchDrawable" format="reference"/>
+
+        <!-- PopupWindow style to use for action modes when showing as a window overlay. -->
+        <attr name="actionModePopupWindowStyle" format="reference"/>
+
+
+        <!-- =================== -->
+        <!-- Text styles -->
+        <!-- =================== -->
+        <eat-comment />
+        <!-- Text color, typeface, size, and style for the text inside of a popup menu. -->
+        <attr name="textAppearanceLargePopupMenu" format="reference"/>
+        <!-- Text color, typeface, size, and style for small text inside of a popup menu. -->
+        <attr name="textAppearanceSmallPopupMenu" format="reference"/>
+
+
+        <!-- =================== -->
+        <!-- Dialog styles -->
+        <!-- =================== -->
+        <eat-comment />
+
+        <!-- Theme to use for dialogs spawned from this theme. -->
+        <attr name="dialogTheme" format="reference" />
+        <!-- Preferred padding for dialog content. -->
+        <attr name="dialogPreferredPadding" format="dimension" />
+        <!-- The list divider used in alert dialogs. -->
+        <attr name="listDividerAlertDialog" format="reference" />
+
+        <!-- =================== -->
+        <!-- Other widget styles -->
+        <!-- =================== -->
+        <eat-comment />
+
+        <!-- Default ActionBar dropdown style. -->
+        <attr name="actionDropDownStyle" format="reference"/>
+        <!-- The preferred item height for dropdown lists. -->
+        <attr name="dropdownListPreferredItemHeight" format="dimension"/>
+        <!-- Default Spinner style. -->
+        <attr name="spinnerDropDownItemStyle" format="reference" />
+        <!-- Specifies a drawable to use for the 'home as up' indicator. -->
+        <attr name="homeAsUpIndicator" format="reference"/>
+
+        <!-- Default action button style. -->
+        <attr name="actionButtonStyle" format="reference"/>
+
+        <!-- Style for button bars -->
+        <attr name="buttonBarStyle" format="reference"/>
+        <!-- Style for buttons within button bars -->
+        <attr name="buttonBarButtonStyle" format="reference"/>
+        <!-- A style that may be applied to buttons or other selectable items
+             that should react to pressed and focus states, but that do not
+             have a clear visual border along the edges. -->
+        <attr name="selectableItemBackground" format="reference"/>
+        <!-- Background drawable for borderless standalone items that need focus/pressed states. -->
+        <attr name="selectableItemBackgroundBorderless" format="reference" />
+        <!-- Style for buttons without an explicit border, often used in groups. -->
+        <attr name="borderlessButtonStyle" format="reference" />
+        <!-- A drawable that may be used as a vertical divider between visual elements. -->
+        <attr name="dividerVertical" format="reference"/>
+        <!-- A drawable that may be used as a horizontal divider between visual elements. -->
+        <attr name="dividerHorizontal" format="reference"/>
+        <!-- Default ActivityChooserView style. -->
+        <attr name="activityChooserViewStyle" format="reference" />
+
+        <!-- Default Toolbar style. -->
+        <attr name="toolbarStyle" format="reference" />
+        <!-- Default Toolar NavigationButtonStyle -->
+        <attr name="toolbarNavigationButtonStyle" format="reference" />
+
+        <!-- Default PopupMenu style. -->
+        <attr name="popupMenuStyle" format="reference"/>
+        <!-- Default PopupWindow style. -->
+        <attr name="popupWindowStyle" format="reference" />
+
+        <!-- EditText text foreground color. -->
+        <attr name="editTextColor" format="reference|color" />
+        <!-- EditText background drawable. -->
+        <attr name="editTextBackground" format="reference" />
+
+        <!-- ImageButton background drawable. -->
+        <attr name="imageButtonStyle" format="reference" />
+
+        <!-- ============================ -->
+        <!-- SearchView styles and assets -->
+        <!-- ============================ -->
+        <eat-comment />
+        <!-- Text color, typeface, size, and style for system search result title. Defaults to primary inverse text color. -->
+        <attr name="textAppearanceSearchResultTitle" format="reference" />
+        <!-- Text color, typeface, size, and style for system search result subtitle. Defaults to primary inverse text color. -->
+        <attr name="textAppearanceSearchResultSubtitle" format="reference" />
+        <!-- Text color for urls in search suggestions, used by things like global search -->
+        <attr name="textColorSearchUrl" format="reference|color" />
+        <!-- Style for the search query widget. -->
+        <attr name="searchViewStyle" format="reference" />
+
+        <!-- =========== -->
+        <!-- List styles -->
+        <!-- =========== -->
+        <eat-comment />
+
+        <!-- The preferred list item height. -->
+        <attr name="listPreferredItemHeight" format="dimension"/>
+        <!-- A smaller, sleeker list item height. -->
+        <attr name="listPreferredItemHeightSmall" format="dimension"/>
+        <!-- A larger, more robust list item height. -->
+        <attr name="listPreferredItemHeightLarge" format="dimension"/>
+
+        <!-- The preferred padding along the left edge of list items. -->
+        <attr name="listPreferredItemPaddingLeft" format="dimension"/>
+        <!-- The preferred padding along the right edge of list items. -->
+        <attr name="listPreferredItemPaddingRight" format="dimension"/>
+
+        <!-- ListPopupWindow compatibility -->
+        <attr name="dropDownListViewStyle" format="reference"/>
+        <attr name="listPopupWindowStyle" format="reference"/>
+
+        <!-- The preferred TextAppearance for the primary text of list items. -->
+        <attr name="textAppearanceListItem" format="reference"/>
+        <!-- The preferred TextAppearance for the primary text of small list items. -->
+        <attr name="textAppearanceListItemSmall" format="reference"/>
+
+
+        <!-- ============ -->
+        <!-- Panel styles -->
+        <!-- ============ -->
+        <eat-comment />
+
+        <!-- The background of a panel when it is inset from the left and right edges of the screen. -->
+        <attr name="panelBackground" format="reference" />
+        <!-- Default Panel Menu width. -->
+        <attr name="panelMenuListWidth" format="dimension" />
+        <!-- Default Panel Menu style. -->
+        <attr name="panelMenuListTheme" format="reference" />
+        <!-- Drawable used as a background for selected list items. -->
+        <attr name="listChoiceBackgroundIndicator" format="reference" />
+
+        <!-- ============= -->
+        <!-- Color palette -->
+        <!-- ============= -->
+        <eat-comment />
+
+        <!-- The primary branding color for the app. By default, this is the color applied to the
+             action bar background. -->
+        <attr name="colorPrimary" format="color" />
+
+        <!-- Dark variant of the primary branding color. By default, this is the color applied to
+             the status bar (via statusBarColor) and navigation bar (via navigationBarColor). -->
+        <attr name="colorPrimaryDark" format="color" />
+
+        <!-- Bright complement to the primary branding color. By default, this is the color applied
+             to framework controls (via colorControlActivated). -->
+        <attr name="colorAccent" format="color" />
+
+        <!-- The color applied to framework controls in their normal state. -->
+        <attr name="colorControlNormal" format="color" />
+
+        <!-- The color applied to framework controls in their activated (ex. checked) state. -->
+        <attr name="colorControlActivated" format="color" />
+
+        <!-- The color applied to framework control highlights (ex. ripples, list selectors). -->
+        <attr name="colorControlHighlight" format="color" />
+
+        <!-- The color applied to framework buttons in their normal state. -->
+        <attr name="colorButtonNormal" format="color" />
+
+        <!-- The color applied to framework switch thumbs in their normal state. -->
+        <attr name="colorSwitchThumbNormal" format="color" />
+
+        <!-- The background used by framework controls. -->
+        <attr name="controlBackground" format="reference" />
+
+        <!-- ============ -->
+        <!-- Alert Dialog styles -->
+        <!-- ============ -->
+        <eat-comment />
+        <attr name="alertDialogStyle" format="reference" />
+        <attr name="alertDialogButtonGroupStyle" format="reference" />
+        <attr name="alertDialogCenterButtons" format="boolean" />
+        <!-- Theme to use for alert dialogs spawned from this theme. -->
+        <attr name="alertDialogTheme" format="reference" />
+
+        <!-- Color of list item text in alert dialogs. -->
+        <attr name="textColorAlertDialogListItem" format="reference|color" />
+
+        <!-- Style for the "positive" buttons within button bars -->
+        <attr name="buttonBarPositiveButtonStyle" format="reference" />
+
+        <!-- Style for the "negative" buttons within button bars -->
+        <attr name="buttonBarNegativeButtonStyle" format="reference" />
+
+        <!-- Style for the "neutral" buttons within button bars -->
+        <attr name="buttonBarNeutralButtonStyle" format="reference" />
+
+        <!-- ===================== -->
+        <!-- Default widget styles -->
+        <!-- ===================== -->
+        <eat-comment />
+
+        <!-- Default AutoCompleteTextView style. -->
+        <attr name="autoCompleteTextViewStyle" format="reference" />
+        <!-- Normal Button style. -->
+        <attr name="buttonStyle" format="reference" />
+        <!-- Small Button style. -->
+        <attr name="buttonStyleSmall" format="reference" />
+        <!-- Default Checkbox style. -->
+        <attr name="checkboxStyle" format="reference" />
+        <!-- Default CheckedTextView style. -->
+        <attr name="checkedTextViewStyle" format="reference" />
+        <!-- Default EditText style. -->
+        <attr name="editTextStyle" format="reference" />
+        <!-- Default RadioButton style. -->
+        <attr name="radioButtonStyle" format="reference" />
+        <!-- Default RatingBar style. -->
+        <attr name="ratingBarStyle" format="reference" />
+        <!-- Indicator RatingBar style. -->
+        <attr name="ratingBarStyleIndicator" format="reference" />
+        <!-- Small indicator RatingBar style. -->
+        <attr name="ratingBarStyleSmall" format="reference" />
+        <!-- Default SeekBar style. -->
+        <attr name="seekBarStyle" format="reference" />
+        <!-- Default Spinner style. -->
+        <attr name="spinnerStyle" format="reference" />
+        <!-- Default style for the Switch widget. -->
+        <attr name="switchStyle" format="reference" />
+
+    </declare-styleable>
+</resources>

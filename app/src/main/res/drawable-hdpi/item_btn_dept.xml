@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- selected -->
+    <item
+        android:state_selected="true"
+        >
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <corners android:radius="5dp"/>
+            <solid android:color="#949ba5"/>
+        </shape>
+    </item>
+
+
+    <!-- pressed -->
+    <item
+        android:state_pressed="true"
+        >
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <corners android:radius="5dp"/>
+            <solid android:color="#949ba5"/>
+        </shape>
+    </item>
+
+    <!-- focused -->
+    <item
+        android:state_focused="true"
+        >
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <corners android:radius="5dp"/>
+            <solid android:color="#949ba5"/>
+        </shape>
+    </item>
+
+    <!-- disabled -->
+    <item
+        android:state_enabled="false"
+        >
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <corners android:radius="5dp"/>
+            <solid android:color="#949ba5"/>
+        </shape>
+    </item>
+
+    <!-- default -->
+    <item
+        >
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <corners android:radius="5dp"/>
+            <solid android:color="#eef1f8"/>
+        </shape>
+    </item>
+</selector>
+
+
