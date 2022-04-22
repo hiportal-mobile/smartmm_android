@@ -9,6 +9,16 @@
         android:theme="@android:style/Theme.NoTitleBar"
         android:largeHeap="true" >
 
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.ex.smartmm.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
         <activity
             android:name="com.ex.smartmm.LoginActivity"
             android:launchMode="singleTask"

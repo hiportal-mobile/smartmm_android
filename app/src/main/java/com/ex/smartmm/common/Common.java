@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.channels.FileChannel;
 import java.text.DecimalFormat;
 import java.util.Calendar;
@@ -64,6 +65,9 @@ public class Common {
 	public final String MIDDLE_BANGHYANG = "일산";
 	public final String DOWN_BANGHYANG = "판교";
     Context context;
+
+    // kbr 2022.04.08
+	DBAdapter_checklist db;
     
 	public Common(){
 		Log.d(TAG, "******************** Common()~! 1 ********************");
@@ -126,7 +130,7 @@ public class Common {
 				Log.d(TAG, "copyFile() - smartmm_checklist.db >> already exist");
 	        }
 			
-		//smartmm.mp4 -> smartmm.db
+		// smartmm.mp4 -> smartmm.db
 		}else{
 			Log.d(TAG, "copyFile() - smartmm.db **********");
 	    	File file = new File("/data/data/"+PREF_smartmm+"/databases/smartmm.db");
@@ -1322,6 +1326,118 @@ public class Common {
 			e.printStackTrace();
 		}
 		return bf.toString();
+	}
+
+	// kbr 2022.03.30
+
+	/**
+	 * 앱 폴더 내 DB 파일 체크
+	 * true : 유
+	 * false : 무
+	 * @return
+	 */
+	public boolean checkOriginFile() {
+		File originDir = new File(Configuration.DBFILE_ORIGIN_PATH);
+		// 앱 폴더가 존재하지 않을 경우
+		if ( !originDir.exists() ) {
+			return false;
+		}
+		// 앱 폴더가 존재할 경우
+		File originFile = new File(Configuration.DBFILE_ORIGIN_PATH + "smartmm_checklist.db");
+
+		// DB 파일이 존재하지 않을 경우
+		if ( !originFile.exists() ) {
+			return false;
+		}
+
+		// DB 파일이 존재할 경우
+		db = new DBAdapter_checklist();
+		Cursor cursor = db.selectSmart_DATAINFO_Seq();
+
+		// 목록이 존재하지 않을 경우
+		if (cursor.getCount() == 0) {
+			return false;
+		}
+
+		// 목록이 존재할 경우
+		return true;
+	}
+
+	public boolean moveFile(String fileName, String inputPath, String outputPath) {
+
+		Log.d(TAG, " - moveFile() : start!!!!!!!!!!!!!!!!");
+
+		Log.d(TAG, "fileName - " + fileName);
+		Log.d(TAG, "inputPath - " + inputPath);
+		Log.d(TAG, "outputPath - " + outputPath);
+
+		// backup 파일이 없을 경우 그냥 진행
+		if (inputPath.equals(Configuration.DBFILE_BACKUP_PATH)) {
+			File backupChk = new File(inputPath + fileName);
+			Log.d(TAG, "backupChk - " + backupChk.getPath());
+			if (!backupChk.exists()) {
+				Log.d(TAG, " - backup file not exist");
+				return true;
+			}
+			Log.d(TAG, " - backup file exist");
+		}
+
+		InputStream is = null;
+		OutputStream os = null;
+		boolean checkResult = false;
+
+		try {
+			File dir = new File(outputPath);
+
+			Log.d(TAG, "dir - " + dir.getPath());
+
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+
+			Log.d(TAG, "move file path - " + outputPath + fileName);
+
+			is = new FileInputStream(inputPath + fileName);
+			os = new FileOutputStream(outputPath + fileName);
+
+			byte[] buffer = new byte[1024];
+			int read;
+			while((read = is.read(buffer)) != -1) {
+				os.write(buffer, 0, read);
+			}
+			os.flush();
+
+			is.close();
+			os.close();
+
+
+			// 백업 경로에서 가지고 오는 경우 DB 에 데이터 저장 / 파일 확인
+			if (inputPath.equals(Configuration.DBFILE_BACKUP_PATH)) {
+				// DB 데이터 저장
+				pref = context.getSharedPreferences(""+PREF_smartmm+"", context.MODE_PRIVATE);
+				ed = pref.edit();
+				Log.d(TAG, "moveFile() - CHECKLIST_DB_VERSION : "+ CHECKLIST_DB_VERSION);
+				ed.putString("CHECKLIST_DB_VERSION", CHECKLIST_DB_VERSION);
+				ed.commit();
+				Log.d(TAG, " - move file complete > origin file check");
+				// origin path 에서 백업하는 경우 백업 경로에 파일이 있는지 확인
+			} else {
+				Log.d(TAG, " - move file complete > backup file check");
+			}
+			// output 경로에 파일 존재 확인
+			checkResult = new File(outputPath + fileName).exists();
+			Log.d(TAG, String.valueOf(checkResult));
+		} catch (IOException e) {
+			Log.d(TAG, "move file path - IOException");
+		}
+
+		// 파일 조회를 위해 열었던 DB close
+		if (db != null && !db.isClosed()) {
+			db.close();
+		}
+
+		return checkResult;
+
 	}
 
 }

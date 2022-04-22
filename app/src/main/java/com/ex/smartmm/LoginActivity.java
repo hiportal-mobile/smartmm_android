@@ -337,7 +337,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 								adbLoc.setCancelable(false);
 								adbLoc.setTitle(R.string.app_name);
 								adbLoc.setMessage("업무접속 연결 후 앱을 재 실행 해주시기 바랍니다.");
-								adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+								adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 									public void onClick(DialogInterface dialog, int which) {
 									}
 								});
@@ -347,7 +347,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 								adbLoc.setCancelable(false);
 								adbLoc.setTitle(R.string.app_name);
 								adbLoc.setMessage("사용자 정보가 일치하지 않습니다.");
-								adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+								adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 									public void onClick(DialogInterface dialog, int which) {
 									}
 								});
@@ -359,7 +359,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 						adbLoc.setCancelable(false);
 						adbLoc.setTitle(R.string.app_name);
 						adbLoc.setMessage("사용자 정보를 입력해 주시기 바랍니다.");
-						adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+						adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int which) {
 							}
 						});

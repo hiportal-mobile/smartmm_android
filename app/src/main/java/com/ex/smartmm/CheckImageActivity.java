@@ -12,6 +12,7 @@ import com.ex.smartmm.vo.JbInfo;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -19,15 +20,20 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.util.SparseBooleanArray;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -233,7 +239,7 @@ public class CheckImageActivity extends Activity implements OnClickListener{
 			}else{
 				holder = (ViewHolder)convertView.getTag();
 			}
-			
+
 			holder.imageView.setId(position);
 			holder.textView.setId(position);
 			holder.btn_del.setId(position);
@@ -246,7 +252,14 @@ public class CheckImageActivity extends Activity implements OnClickListener{
 					int id = v.getId();
 					Intent intent = new Intent();
 					intent.setAction(Intent.ACTION_VIEW);
-					intent.setDataAndType(Uri.parse("file://"+items.get(id).getImgPath()), "image/*");
+					// kbr 2022.03.24
+//					intent.setDataAndType(Uri.parse("file://"+items.get(id).getImgPath()), "image/*");
+//					intent.setDataAndType(Uri.parse("content:/"+items.get(id).getImgPath()), "image/*");
+//					Uri photoUri = Uri.fromFile(new File(items.get(id).getImgPath()));
+					Uri photoUri = FileProvider.getUriForFile(CheckImageActivity.this, "com.ex.smartmm.fileprovider", new File(items.get(id).getImgPath()));
+					// 접근 승인 플래그 (필수)
+					intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+					intent.setDataAndType(photoUri, "image/*");
 					startActivity(intent);
 				}
 			});
@@ -275,10 +288,12 @@ public class CheckImageActivity extends Activity implements OnClickListener{
 						public void onClick(DialogInterface arg0, int arg1) {
 						}
 					});
-					adbLoc.show();
-					
-					
-					
+//					adbLoc.show();
+
+					Dialog d = adbLoc.create();
+					d.show();
+					d.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+
 				}
 			});
 			

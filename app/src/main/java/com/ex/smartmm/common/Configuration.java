@@ -2,6 +2,7 @@ package com.ex.smartmm.common;
 
 import android.os.Environment;
 
+
 public class Configuration {
 	
 	//primitive
@@ -67,6 +68,12 @@ public class Configuration {
 	
 	/** 2018.09.05 추가 **/
 	public static String CHECKLIST_SEQ = "CHECKLIST_SEQ";// checkList 순서
+
+	/* kbr 2022.03.29 */
+	public static String COMMON_SMARTMM_CHECKVERSION = "COMMON_EQUIPMENT_CHECKVERSION"; // APP VERSION 조회
+	public static String DBFILE_BACKUP_PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/SMARTMMDB/";	// DB 파일 백업 경로 (외부)
+	public static String DBFILE_ORIGIN_PATH = "/data/data/com.ex.smartmm/databases/";	// 원본 DB 파일 경로
+
 }
 
 

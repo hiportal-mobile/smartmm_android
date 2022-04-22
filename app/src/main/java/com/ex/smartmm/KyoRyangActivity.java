@@ -2234,7 +2234,7 @@ public class KyoRyangActivity extends BaseActivity implements OnClickListener{
 			adbLoc.setCancelable(false);
 			adbLoc.setTitle("스마트정비관리");  
 			adbLoc.setMessage(message);
-			adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+			adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					
 				}
@@ -2391,7 +2391,7 @@ public class KyoRyangActivity extends BaseActivity implements OnClickListener{
 			adbLoc.setCancelable(false);
 			adbLoc.setTitle("스마트정비관리");  
 			adbLoc.setMessage(message);
-			adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+			adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					
 				}
@@ -2530,7 +2530,7 @@ public class KyoRyangActivity extends BaseActivity implements OnClickListener{
 			adbLoc.setCancelable(false);
 			adbLoc.setTitle("스마트정비관리");  
 			adbLoc.setMessage(message);
-			adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+			adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					
 				}
@@ -2671,7 +2671,7 @@ public class KyoRyangActivity extends BaseActivity implements OnClickListener{
 						adbLoc.setCancelable(false);
 						adbLoc.setTitle("스마트정비관리");  
 						adbLoc.setMessage(message);
-						adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+						adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int which) {
 								
 							}
@@ -2897,7 +2897,7 @@ public class KyoRyangActivity extends BaseActivity implements OnClickListener{
 					adbLoc.setCancelable(false);
 					adbLoc.setTitle("스마트정비관리"); 
 					adbLoc.setMessage("업무접속 연결 확인 후 사용하시기 바랍니다.");
-					adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+					adbLoc.setPositiveButton("닫기", new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {
 						}
 					});
@@ -2934,7 +2934,7 @@ public class KyoRyangActivity extends BaseActivity implements OnClickListener{
 				adbLoc.setCancelable(false);
 				adbLoc.setTitle(R.string.app_name);
 				adbLoc.setMessage(R.string.nolocation_kr);
-				adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+				adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 					}
 				});
@@ -3423,7 +3423,7 @@ public class KyoRyangActivity extends BaseActivity implements OnClickListener{
 					adbLoc.setCancelable(false); 
 					adbLoc.setTitle("스마트정비관리"); 
 					adbLoc.setMessage("업무접속 연결 확인 후 사용하시기 바랍니다."); 
-					adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+					adbLoc.setPositiveButton("닫기", new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {
 						}
 					});

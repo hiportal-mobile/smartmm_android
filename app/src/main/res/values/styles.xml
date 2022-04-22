@@ -30,7 +30,7 @@
 		<item name="android:windowNoTitle">true</item>
 		<item name="android:windowIsTranslucent">true</item> 
 		<item name="android:windowFrame">@null</item> 
-	 </style> 	
+	 </style>
 
     <style name="TestSpinnerStyle" parent="android:style/Widget.ListView.DropDown">
 	    <item name="android:divider">#ff0000</item>

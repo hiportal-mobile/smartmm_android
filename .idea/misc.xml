@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/qhfud/AppData/Local/Android/Sdk/platforms/android-28/data/res/drawable/btn_default.xml" value="0.1" />
+        <entry key="..\:/Users/qhfud/AppData/Local/Android/Sdk/platforms/android-28/data/res/drawable/btn_default_small.xml" value="0.1" />
+        <entry key="..\:/Users/qhfud/AppData/Local/Android/Sdk/platforms/android-28/data/res/layout/alert_dialog_progress.xml" value="0.10511651469098278" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android/app/src/main/res/drawable-hdpi/border_style_ll.xml" value="0.1" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android/app/src/main/res/layout/activity_photolist.xml" value="0.1" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android/app/src/main/res/layout/dialog.xml" value="0.1" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android/app/src/main/res/layout/dialog_bssel.xml" value="0.22333333333333336" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android/app/src/main/res/layout/kyoryang.xml" value="0.14945652173913043" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android/app/src/main/res/layout/main.xml" value="0.1" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android/app/src/main/res/layout/main_bak.xml" value="0.22333333333333336" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android_2/app/src/main/res/layout/kyoryang.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android_2/app/src/main/res/layout/main_bak.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/qhfud/StudioProjects/smartmm_android_2/app/src/main/res/xml/filepaths.xml" value="0.24166666666666667" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

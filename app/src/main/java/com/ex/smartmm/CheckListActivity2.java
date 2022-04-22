@@ -28,6 +28,7 @@ import com.ex.smartmm.net.CustomMultiPartEntity.ProgressListener;
 import com.ex.smartmm.vo.JbDataInfo;
 import com.ex.smartmm.vo.JbInfo;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -39,23 +40,30 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Layout;
 import android.util.Log;
+import android.view.Display;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -221,7 +229,7 @@ public class CheckListActivity2 extends Activity implements OnClickListener, OnI
 		}
 
 		saveData();
-		
+
 	}
 	
 	public void checkConnectStatus(ArrayList<JbDataInfo> selectedItem){
@@ -265,7 +273,7 @@ public class CheckListActivity2 extends Activity implements OnClickListener, OnI
 				adbLoc.setCancelable(false);
 				adbLoc.setTitle("스마트정비관리"); 
 				adbLoc.setMessage("업무접속 연결 확인 후 사용하시기 바랍니다.");
-				adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+				adbLoc.setPositiveButton("닫기", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 					}
 				});
@@ -332,12 +340,13 @@ public class CheckListActivity2 extends Activity implements OnClickListener, OnI
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
 	}
-
 	
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		AlertDialog.Builder adbLoc = new AlertDialog.Builder(CheckListActivity2.this);
+
 		switch (v.getId()){
 		case R.id.btn_back:
 			finish();
@@ -346,6 +355,7 @@ public class CheckListActivity2 extends Activity implements OnClickListener, OnI
 		case R.id.btn_send:
 			Log.d(TAG, "onClick(btn_send)~!");
 			adbLoc = new AlertDialog.Builder(CheckListActivity2.this);
+
 			adbLoc.setCancelable(false);
 			adbLoc.setTitle("스마트정비관리");
 			adbLoc.setMessage("서버전송을 하시겠습니까?");
@@ -378,12 +388,19 @@ public class CheckListActivity2 extends Activity implements OnClickListener, OnI
 				public void onClick(DialogInterface arg0, int arg1) {
 				}
 			});
-			adbLoc.show();
+//			adbLoc.show();
+
+			Dialog d = adbLoc.create();
+
+			d.show();
+			d.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+
 			break;
 			
 		case R.id.btn_del:
 			Log.d(TAG, "onClick(btn_del)~!");
 			adbLoc = new AlertDialog.Builder(CheckListActivity2.this);
+
 			adbLoc.setCancelable(false);
 			adbLoc.setTitle("스마트정비관리");
 			adbLoc.setMessage("삭제 하시겠습니까?");
@@ -410,6 +427,16 @@ public class CheckListActivity2 extends Activity implements OnClickListener, OnI
 					// 모든 선택 상태 초기화.
 		            listView.clearChoices() ;
 		            adapter.notifyDataSetChanged();
+
+					// kbr 2022.04.08
+					// 파일 내역 삭제 후 DB 파일 백업
+					Common commonF = new Common(CheckListActivity2.this);
+					try {
+						commonF.moveFile("smartmm_checklist.db", Configuration.DBFILE_ORIGIN_PATH, Configuration.DBFILE_BACKUP_PATH);
+						commonF.moveFile("smartmm.db", Configuration.DBFILE_ORIGIN_PATH, Configuration.DBFILE_BACKUP_PATH);
+					} catch (Exception e) {
+						Log.e(TAG, "File backup Exception!!!!!!!!!!!!!!!");
+					}
 				}
 				
 			});
@@ -418,7 +445,11 @@ public class CheckListActivity2 extends Activity implements OnClickListener, OnI
 				public void onClick(DialogInterface arg0, int arg1) {
 				}
 			});
-			adbLoc.show();
+//			adbLoc.show();
+
+			d = adbLoc.create();
+			d.show();
+			d.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
 			
 			break;
 			
@@ -1090,7 +1121,7 @@ public class CheckListActivity2 extends Activity implements OnClickListener, OnI
 						adbLoc.setCancelable(false);
 						adbLoc.setTitle("스마트정비관리"); 
 						adbLoc.setMessage("업무접속 연결 확인 후 사용하시기 바랍니다.");
-						adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+						adbLoc.setPositiveButton("닫기", new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int which) {
 							}
 						});

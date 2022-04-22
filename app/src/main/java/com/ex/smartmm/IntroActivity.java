@@ -11,8 +11,10 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.ex.smartmm.common.Common;
@@ -24,8 +26,10 @@ import com.skt.pe.common.data.AuthData;
 import com.skt.pe.common.data.SKTUtil;
 import com.skt.pe.common.exception.SKTException;
 import com.skt.pe.common.service.Parameters;
+import com.skt.pe.common.vpn.SGVPNConnection;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
@@ -33,6 +37,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
@@ -42,13 +47,17 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class IntroActivity extends BaseActivity implements OnClickListener {
 	
 	public final String TAG = "IntroActivity";
-	
+
+	// kbr 2022.03.30
+	private Dialog d = null;
+
 	Common common;
 	DBAdapter_jangbi jangbiDb;
 
@@ -104,6 +113,14 @@ public class IntroActivity extends BaseActivity implements OnClickListener {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		jangbiDb.close();
+
+		// kbr 2022.03.30
+		// 업데이트 팝업 한번 더 지워준다.
+		if (d != null && d.isShowing()) {
+			d.dismiss();
+			d = null;
+		}
+
 		super.onPause();
 	}
 	
@@ -130,15 +147,57 @@ public class IntroActivity extends BaseActivity implements OnClickListener {
     		Log.d(TAG, "bssid on bssid2 = " + bssid2);
 
     		try{
-    			getGmpAuth();
-    		}catch (Exception e) {
+//    			getGmpAuth();
+
+//				kbr 2022.03.29
+				if (backupFile()) {
+					getGmpAuth();
+				}
+
+   		}catch (Exception e) {
     			e.printStackTrace();
     		}
 		}
 
 		Common.setPrefString(IntroActivity.this, Configuration.SHARED_BTNX, "N");
 	}
-	
+
+	// kbr 2022.04.08 DB파일 백업 / 복원 메소드 추가
+
+	private boolean backupFile() {
+		Common commonF = new Common(IntroActivity.this);
+		boolean check = false;
+
+
+		// 파일 백업
+		try {
+			if (commonF.checkOriginFile()) {
+				if (commonF.moveFile("smartmm_checklist.db", Configuration.DBFILE_ORIGIN_PATH, Configuration.DBFILE_BACKUP_PATH)
+						&& commonF.moveFile("smartmm.db", Configuration.DBFILE_ORIGIN_PATH, Configuration.DBFILE_BACKUP_PATH)) {
+					check = true;
+					Log.d(TAG, "File BackUp Success!");
+				} else {
+					check = false;
+					Log.d(TAG, "File BackUp Failed!");
+				}
+			}
+			// 파일 복원
+			else {
+				if (commonF.moveFile("smartmm_checklist.db", Configuration.DBFILE_BACKUP_PATH, Configuration.DBFILE_ORIGIN_PATH)
+						&& commonF.moveFile("smartmm.db", Configuration.DBFILE_BACKUP_PATH, Configuration.DBFILE_ORIGIN_PATH)) {
+					check = true;
+					Log.d(TAG, "File restore Success!");
+				} else {
+					check = false;
+					Log.d(TAG, "File restore Failed!");
+				}
+			}
+		} catch ( Exception e ) {
+			Log.e(TAG, "moveFile method Exception!!!!!!!!!!!!!!!!!!!!!!");
+			check = true;
+		}
+		return check;
+	}
 	
 	public void getGmpAuth() throws SKTException{
 		Log.d(TAG, "getGmpAuth()~!");
@@ -268,13 +327,19 @@ public class IntroActivity extends BaseActivity implements OnClickListener {
 							adbLoc.setCancelable(false);
 							adbLoc.setTitle(R.string.app_name);
 							adbLoc.setMessage("사용자 정보를 입력해 주시기 바랍니다.");
-							adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+							//
+							adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog, int which) {
 								}
 							});
-							adbLoc.show();
-						
-						//사번을 입력 했을 경우
+//							adbLoc.show();
+
+							Dialog d = adbLoc.create();
+							d.show();
+							d.getWindow().setLayout(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+
+
+							//사번을 입력 했을 경우
 						}else{
 //							getGmpAuth(ed_userid.getText().toString());
 							//사번 정확히 입력 - 본사/본부/지사 체크
@@ -312,7 +377,7 @@ public class IntroActivity extends BaseActivity implements OnClickListener {
 									adbLoc.setCancelable(false);
 									adbLoc.setTitle(R.string.app_name);
 									adbLoc.setMessage("업무접속 연결 후 앱을 재 실행 해주시기 바랍니다.");
-									adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+									adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 										public void onClick(DialogInterface dialog, int which) {
 										}
 									});
@@ -324,7 +389,7 @@ public class IntroActivity extends BaseActivity implements OnClickListener {
 									adbLoc.setCancelable(false);
 									adbLoc.setTitle(R.string.app_name);
 									adbLoc.setMessage("사용자 정보가 일치하지 않습니다.");
-									adbLoc.setPositiveButton("예", new DialogInterface.OnClickListener() {
+									adbLoc.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 										public void onClick(DialogInterface dialog, int which) {
 										}
 									});
@@ -399,6 +464,11 @@ public class IntroActivity extends BaseActivity implements OnClickListener {
 			//COMMON_EQUIPMENT_CARUPTDATA
 			}else if(primitive.equals(Configuration.COMMON_EQUIPMENT_CARUPTDATA)){
 				progressDialog = ProgressDialog.show(IntroActivity.this, "", "1장비 데이터 정보 수신중...\n잠시만 기다려주세요.", true, false);
+
+			// kbr 2022.03.29
+			// COMMON_SMARTMM_CHECKVERSION
+			}else if(primitive.equals(Configuration.COMMON_SMARTMM_CHECKVERSION)){
+				progressDialog = ProgressDialog.show(IntroActivity.this, "", "버전 확인 중...\n잠시만 기다려주세요.", true);
 			}
 			
 			super.onPreExecute();
@@ -411,6 +481,13 @@ public class IntroActivity extends BaseActivity implements OnClickListener {
 			this.primitive = primitive;
 			this.params = params;
 		}
+
+		// kbr 2022.03.29
+//		public Action(String primitive){
+//			Log.d(TAG, "******************** Action CLASS ********************");
+//			Log.d(TAG, "Action() - primitive : "+primitive);
+//			this.primitive = primitive;
+//		}
 		
 		@Override
 		protected JSONObject doInBackground(String... arg0) {
@@ -462,6 +539,11 @@ public class IntroActivity extends BaseActivity implements OnClickListener {
 					body.append("?");
 					body.append(params.toString());
 
+				// 	kbr 2022.03.29
+				}else if (primitive.equals(Configuration.COMMON_SMARTMM_CHECKVERSION)) {
+					body.append("http://128.200.121.68:9000/emp_sf/service.pe");
+					body.append("?");
+					body.append(params.toString());
 				}else{
 					date = getLastDate();
 					//date = "20180915";
@@ -543,6 +625,11 @@ public class IntroActivity extends BaseActivity implements OnClickListener {
 							jsonObject.put("carList", response.trim());
 							returnData = jsonObject;
 						}else if(primitive.equals(Configuration.COMMON_EQUIPMENT_DEPTINFO)){
+							jsonObject = new JSONObject(response.trim());
+							returnData = jsonObject;
+						// kbr 2022.03.30
+						// 	COMMON_SMARTMM_CHECKVERSION
+						}else if(primitive.equals(Configuration.COMMON_SMARTMM_CHECKVERSION)){
 							jsonObject = new JSONObject(response.trim());
 							returnData = jsonObject;
 						}
@@ -690,6 +777,11 @@ public class IntroActivity extends BaseActivity implements OnClickListener {
 
 						Log.d(TAG, "Action > onPostExecute() - COMMON_EQUIPMENT_DEPTINFO !!");
 						Log.d(TAG, "Action > onPostExecute() - COMMON_TTMDEPT_LIST !!");
+
+					// kbr 2022.03.30
+					} else if (primitive.equals(Configuration.COMMON_SMARTMM_CHECKVERSION)) {
+						Log.d(TAG, "Action > onPostExecute() - COMMON_SMARTMM_CHECKVERSION !!");
+						String app_ver = (String)jsonObject.get("app_ver");
 					}
 
 					
